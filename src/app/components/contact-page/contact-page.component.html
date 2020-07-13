@@ -1,0 +1,37 @@
+
+<div class="main-container" *ngIf="!messageView && !isLoading">
+    <h2>Send Me A Message Today!</h2>
+
+    <hr>
+
+    <div class="form-container">
+        <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+            <div class="form-group-small">
+                <label class="labels" for="Email">Email</label>
+                <input type="email" class="form-email" name="Email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="Email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group-small">
+                <label class="labels" for="Name">Name</label>
+                <input type="text" class="form-name" name="Name" placeholder="Enter name" formControlName="Name">
+            </div>
+            <div class="form-group-small">
+                <label class="labels" for="Message">Message</label>
+                <textarea class="form-message" formControlName="Message" name="Message"></textarea>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary submit-button" [disabled]="!FormData.valid">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="main-container" *ngIf="messageView && !isLoading">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="loading-container" *ngIf="isLoading">
+    <img src="/assets/img/Spinner-1s-257px.gif" alt="Loading Icon">
+</div>
+
+<div *ngIf="!messageView && !isLoading">
+    <app-footer position="absolute"></app-footer>
+</div>

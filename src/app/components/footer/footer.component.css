@@ -1,0 +1,88 @@
+
+#footer {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 250px;
+    background: #162252;
+    box-shadow: 0 0 12px rgba(33, 33, 33, .2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+    font-size: 18px;
+}
+
+.item {
+    cursor: pointer;
+    padding: 0px 20px;
+    color: white;
+    font-size: 17px;
+    transition: .4s ease;
+}
+
+.item:hover {
+    transform: translateY(10%);
+}
+
+.item:focus {
+    outline: none;
+}
+
+.letter-text-main {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 15px;
+    color: white;
+    width: auto;
+}
+
+.bottom-container {
+    font-size: 13px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#letter {
+    margin-left: 30px;
+    margin-right: 650px;
+}
+
+#seft {
+    margin-right: 30px;
+    margin-left: 650px;
+}
+
+hr {
+    display: block;
+    border-width: .8px;
+    border-style: solid;
+    color: white;
+    width: 90%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.fas {
+    margin-right: 10px;
+}
+
+.far {
+    margin-right: 10px;
+}

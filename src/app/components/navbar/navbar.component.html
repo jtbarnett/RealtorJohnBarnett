@@ -1,0 +1,36 @@
+
+<div class="nav-bar">
+  <div class="nav-logo">
+    <img id="main-logo" routerLink="" src="/assets/img/realtorLogo.png" alt="Company Logo">
+  </div>
+
+  <div class="information">
+    <div class="phone item">
+      <i class="fas fa-phone"></i>
+      419-738-HOME (4663)
+    </div>
+    <div class="email item">
+      <i class="far fa-envelope"></i>
+      realtor.john1@yahoo.com
+    </div>
+    <div class="location item">
+      <i class="fas fa-map-marker-alt"></i>
+      Wapakoneta, OH
+    </div>
+  </div>
+  
+  <div class="nav-links">
+    <div class="nav-links-single" routerLink="">
+      Home
+    </div>
+    <div class="nav-links-single" (click)="navProperties()">
+      Properties
+    </div>
+    <div class="nav-links-single" routerLink="/rental-application">
+      Rental Application
+    </div>
+    <div class="nav-links-single" routerLink="/contact-page">
+      Contact
+    </div>
+  </div>
+</div>
