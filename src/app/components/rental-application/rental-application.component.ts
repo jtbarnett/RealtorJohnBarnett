@@ -1,5 +1,5 @@
 import { Component, OnInit, forwardRef } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
+// import { AppComponent } from '../../app.component';
 // import { PayPalProcessor, OnApprove, OrderRequest } from '../../paypal';
 // import { OnApproveData, OnApproveActions, OnCancelData, OnErrorData  } from '../../paypal/types/buttons';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
