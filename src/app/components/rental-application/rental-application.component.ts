@@ -1,59 +1,69 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { ContactService } from 'src/app/services/contact.service';
-import { Router } from '@angular/router';
+import { Component, OnInit, forwardRef } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
+import { PayPalProcessor, OnApprove, OrderRequest } from '../../paypal';
+import { OnApproveData, OnApproveActions, OnCancelData, OnErrorData  } from '../../paypal/types/buttons';
 
 @Component({
   selector: 'app-rental-application',
   templateUrl: './rental-application.component.html',
-  styleUrls: ['./rental-application.component.css']
+  styleUrls: ['./rental-application.component.css'],
+  providers: [ { provide: PayPalProcessor, useExisting: forwardRef(() => AppComponent) }]
 })
-export class RentalApplicationComponent implements OnInit {
+export class RentalApplicationComponent implements OnInit, OnApprove {
 
-  FormData: FormGroup;
   segmentArray: string[];
   paymentView = false;
   isLoading = false;
+  paidFor = false;
 
-  constructor(private builder: FormBuilder, private contact: ContactService, private route: Router) { }
+  // Paypal properties
+  width = 220;
+  height = 35;
+  shape = 'rect';
+  color = 'black';
+  label = 'pay';
+  layout = 'vertical';
+  order: OrderRequest = {
+    intent: 'CAPTURE', 
+    purchase_units: [{
+      custom_id: 'wallet10',
+      amount: {
+        currency_code: 'USD',
+        value: '10'
+      }
+    }]
+  };
+
+  constructor() { }
 
   ngOnInit() {
-    this.route.events.subscribe((val) => {
-      let myString = this.route.url.substr(1);
-      this.segmentArray = myString.split('/');
-      this.setMessageView();
-    });
-
-    let myString = this.route.url.substr(1);
-    this.segmentArray = myString.split('/');
-    this.setMessageView();
-
-    this.FormData = this.builder.group({ 
-      Name: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-      Message: new FormControl('', [Validators.required])
-    });
+    this.paidFor = true;
   }
 
-  onSubmit(FormData) {
+  // Paypal methods
+  onApprove(data: OnApproveData, actions: OnApproveActions) {
+    console.log('Transaction Approved:', data);
+
+    // My setting for loading page
+    this.paidFor = true;
     this.isLoading = true;
-    console.log(FormData);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
 
-    this.contact.postMessage(FormData).subscribe(response => {
-      this.route.navigate(['/contact-page/message-success']);
-      console.log('success');
-    }, error => {
-      console.warn(error.responseText);
-      console.log({ error });
+    // Captures the trasnaction
+    return actions.order.capture().then(details => {
+      console.log('Transaction completed by', details);
+      // Call your server to handle the transaction
+      return Promise.reject('Transaction aborted by the server');
     });
   }
 
-  setMessageView() {
-    if(this.segmentArray.length === 2) {
-      this.paymentView = true;
-    } else {
-      this.paymentView = false;
-    }
-    this.isLoading = false;
+  onCancel(data: OnCancelData) {
+    console.log('Transaction Cancelled:', data); 
+  }
+
+  onError(data: OnErrorData) { 
+    console.log('Transaction Error:', data); 
   }
 }

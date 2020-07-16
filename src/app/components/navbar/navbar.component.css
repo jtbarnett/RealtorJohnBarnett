@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #003F87;
+    color: black;
     font-size: 18px;
     font-weight: bold;
     height: 100%;
@@ -71,7 +71,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    color: #003F87;
+    color: black;
     font-size: 18px;
     margin-left: -50px;
 }

@@ -11,8 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './services/contact.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RentalApplicationComponent } from './components/rental-application/rental-application.component';
-import { PaymentSuccessComponent } from './components/payment-success/payment-success.component';
-import { MessageSuccessComponent } from './components/message-success/message-success.component';
+import { PayPalModule } from './paypal';
 
 @NgModule({
   declarations: [
@@ -22,15 +21,20 @@ import { MessageSuccessComponent } from './components/message-success/message-su
     FooterComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    RentalApplicationComponent,
-    PaymentSuccessComponent,
-    MessageSuccessComponent
+    RentalApplicationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PayPalModule.init({
+      clientId: 'AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc', // Using sandbox for testing purposes only
+      //currency: 'USD',
+      //commit: true,
+      //vault: true,
+      //disableFunding: 'credit,card'
+    })
   ],
   providers: [
     ContactService

@@ -5,7 +5,8 @@
     right: 0;
     bottom: 0;
     height: 250px;
-    background: #162252;
+    /*background: #162252;*/
+    background: #0e1111;
     box-shadow: 0 0 12px rgba(33, 33, 33, .2);
 
     display: flex;
