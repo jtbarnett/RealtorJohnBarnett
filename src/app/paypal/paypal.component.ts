@@ -1,8 +1,8 @@
-import { Directive, InjectionToken, Inject, Optional, OnDestroy, Input, Output, EventEmitter, HostBinding, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
-import { Buttons, ButtonsStyle, ButtonsLayout, ButtonsColor, ButtonsShape, ButtonsLabel } from './types/buttons';
+import { Optional, OnDestroy, Input, Output, EventEmitter, HostBinding, ElementRef, OnChanges, SimpleChanges, Component } from '@angular/core';
+import { Buttons, ButtonsLayout, ButtonsColor, ButtonsShape, ButtonsLabel } from './types/buttons';
 import { OnShippingChangeData, OnShippingChangeActions } from './types/buttons';
 import { OnApproveData, OnApproveActions } from './types/buttons';
-import { OnCancelData, OnCancelActions } from './types/buttons';
+import { OnCancelData } from './types/buttons';
 import { OnClickData, OnClickActions } from './types/buttons';
 import { OnInitData, OnInitActions } from './types/buttons';
 import { SubscriptionRequest } from './types/subscription';
@@ -30,7 +30,12 @@ export abstract class PayPalProcessor implements OnApprove, OnShippingChange {
 }
 
 /** PayPal Buttons */
-@Directive({ selector: 'wm-paypal' })
+/*@Directive({ selector: 'wm-paypal' })*/
+
+
+@Component({
+  selector: 'wm-paypal',
+})
 export class PayPalButtons implements OnChanges, OnDestroy {
 
   private disable$ = new BehaviorSubject<boolean>(false);

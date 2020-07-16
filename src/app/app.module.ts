@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './services/contact.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RentalApplicationComponent } from './components/rental-application/rental-application.component';
-import { PayPalModule } from './paypal';
+// import { PayPalModule } from './paypal';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,10 @@ import { PayPalModule } from './paypal';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PayPalModule.init({
-      clientId: 'AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc', // Using sandbox for testing purposes only
-      //currency: 'USD',
-      //commit: true,
-      //vault: true,
-      //disableFunding: 'credit,card'
-    })
+    NgxPayPalModule
+    /*PayPalModule.init({
+      clientId: 'AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc' // Using sandbox for testing purposes only
+    })*/
   ],
   providers: [
     ContactService

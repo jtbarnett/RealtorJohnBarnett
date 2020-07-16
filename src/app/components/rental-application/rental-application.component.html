@@ -20,18 +20,14 @@
         </div>
 
         <div class="paypal-btn-container">
-            <wm-paypal
-            [style.width.px]="width" 
-            [height]="height"
-            [layout]="layout" 
-            [shape]="shape" 
-            [color]="color" 
-            [label]="label"
-            [request]="order"
-            (cancel)="onCancel($event)"
-            (error)="onError($event)"
-            #paypal
-        ></wm-paypal>
+            <!--<wm-paypal
+                [style.width.px]="width" 
+                [request]="order"
+                (cancel)="onCancel($event)"
+                (error)="onError($event)"
+                #paypal
+            ></wm-paypal>-->
+            <ngx-paypal [config]="payPalConfig"></ngx-paypal>
         </div>
     </div>
 
