@@ -20,13 +20,6 @@
         </div>
 
         <div class="paypal-btn-container">
-            <!--<wm-paypal
-                [style.width.px]="width" 
-                [request]="order"
-                (cancel)="onCancel($event)"
-                (error)="onError($event)"
-                #paypal
-            ></wm-paypal>-->
             <ngx-paypal [config]="payPalConfig"></ngx-paypal>
         </div>
     </div>

@@ -8,10 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ContactService } from './services/contact.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RentalApplicationComponent } from './components/rental-application/rental-application.component';
-// import { PayPalModule } from './paypal';
 import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
@@ -30,13 +28,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
     ReactiveFormsModule,
     HttpClientModule,
     NgxPayPalModule
-    /*PayPalModule.init({
-      clientId: 'AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc' // Using sandbox for testing purposes only
-    })*/
   ],
-  providers: [
-    ContactService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
