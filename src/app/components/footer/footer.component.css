@@ -5,7 +5,6 @@
     right: 0;
     bottom: 0;
     height: 250px;
-    /*background: #162252;*/
     background: #0e1111;
     box-shadow: 0 0 12px rgba(33, 33, 33, .2);
 
@@ -21,7 +20,6 @@
     align-items: center;
     flex-direction: row;
     color: white;
-    font-size: 18px;
 }
 
 .item {
@@ -52,6 +50,7 @@
 }
 
 .bottom-container {
+    width: 100%;
     font-size: 13px;
     color: white;
     display: flex;
@@ -62,12 +61,12 @@
 
 #letter {
     margin-left: 30px;
-    margin-right: 650px;
+    left: 0;
 }
 
 #seft {
     margin-right: 30px;
-    margin-left: 650px;
+    right: 0;
 }
 
 hr {
@@ -76,8 +75,7 @@ hr {
     border-style: solid;
     color: white;
     width: 90%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0px;
 }
 
 .fas {
@@ -86,4 +84,57 @@ hr {
 
 .far {
     margin-right: 10px;
+}
+
+@media(max-width: 640px) {
+    .bottom-container {
+        flex-direction: column;
+        justify-content: center;
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    #letter {
+        margin: 0;
+    }
+
+    #seft {
+        margin: 0;
+    }
+
+    hr {
+        margin: 15px 0px;
+    }
+}
+
+@media(max-width: 492px) {
+    .item {
+        font-size: 14px;
+        padding: 0px 10px;
+    }
+
+    .letter-text-main {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 390px) {
+    .bottom-container {
+        font-size: 10px;
+    }
+
+    .item {
+        font-size: 12px;
+        padding: 0px 5px;
+    }
+
+    .letter-text-main {
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 314px) {
+    .bottom-container {
+        font-size: 8px;
+    }
 }

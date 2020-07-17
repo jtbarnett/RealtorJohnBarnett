@@ -20,7 +20,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 #main-logo {
@@ -39,7 +39,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 60px;
+    margin-right: 30px;
 }
 
 .nav-links-single {
@@ -86,4 +86,156 @@
 
 .far {
     margin-right: 2px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #0e1111;
+    color: white;
+    font-weight: bold;
+    padding: 17px 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Dropdown button on hover & focus */
+/*.dropbtn:hover {
+    background-color: #E8E8E8;
+    color: black;
+}*/
+
+.dropbtn:focus {
+    background-color: #E8E8E8;
+    color: black;
+    outline: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    width: 130px;
+    position: relative;
+    display: none;
+    margin-right: 20px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-color: #E8E8E8;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 0px 12px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: black;
+    color: white;
+}
+  
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display:block;
+}
+
+.prop-button {
+    cursor: pointer;
+}
+
+@media(max-width: 1630px) {
+    .information {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+}
+
+@media(max-width: 1350px) {
+    .information {
+        display: none;
+    }
+
+    .nav-bar {
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        width: fit-content;
+    }
+
+    .nav-links {
+        width: fit-content;
+    }
+}
+
+@media(max-width: 768px) {
+    .nav-logo {
+        margin-left: 20px;
+    }
+
+    .nav-links {
+        margin-right: 10px;
+    }
+}
+
+@media(max-width: 675px) {
+    .nav-logo {
+        margin-left: 10px;
+    }
+
+    .nav-links-single {
+        font-size: 14px;
+        padding: 0px 5px;
+    }
+}
+
+@media only screen and (max-width: 590px) {
+    .nav-links {
+        display: none;
+    }
+
+    .dropdown {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .nav-logo {
+        margin-left: 5px;
+    }
+
+    .dropdown {
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .nav-logo {
+        margin-left: 2px;
+    }
+
+    .dropdown {
+        width: 110px;
+    }
+
+    .dropbtn {
+        font-size: 12px;
+        padding: 20px 0px;
+    }
+
+    .dropdown-content {
+        font-size: 12px;
+    }
 }

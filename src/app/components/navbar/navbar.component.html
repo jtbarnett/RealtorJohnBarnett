@@ -33,4 +33,14 @@
       Contact
     </div>
   </div>
+
+  <div class="dropdown">
+    <button (click)="myFunction()" class="dropbtn">Navigation Links</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a routerLink="">Home</a>
+      <a class="prop-button" (click)="navProperties()">Properties</a>
+      <a routerLink="/rental-application">Rental Application</a>
+      <a routerLink="/contact-page">Contact</a>
+    </div>
+  </div>
 </div>

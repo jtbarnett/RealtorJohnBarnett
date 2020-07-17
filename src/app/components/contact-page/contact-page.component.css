@@ -4,5 +4,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 25px;
+}
+
+.google-form {
+    width: 600px;
+    height: 795px;
+}
+
+@media(max-width: 600px) {
+    .google-form {
+        width: 500px;
+    }
+}
+
+@media(max-width: 500px) {
+    .google-form {
+        width: 400px;
+    }
+}
+
+@media(max-width: 400px) {
+    .google-form {
+        width: 320px;
+        height: 840px;
+    }
 }

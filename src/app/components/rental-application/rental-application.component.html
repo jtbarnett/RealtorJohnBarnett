@@ -1,41 +1,44 @@
 
-<div class="main-container" *ngIf="!isLoading">
-    <div class="paypal-container" *ngIf="!paidFor">
-        <h1>Rental Application</h1>
-
-        <hr>
-
-        <div class="details-container">
-            <h2>Overiew</h2>
-            <p class="top-paragraph">
-                The rental application must be paid upfront with a $10
-                <span class="underline">non-refundable</span>
-                fee. Each individual (18 or older) that is interested in any rental
-                <span class="italic">MUST</span>
-                fill out a seperate application.
-            </p>
-            <p class="middle-paragraph">
-                You can pay the application fee through PayPal below. You will be able to sign in to a PayPal account or pay with a credit/debit card. Once the payment is accepted, you will be redirected to the application process.
-            </p>
+<div class="space">
+    <div>
+        <div class="main-container" *ngIf="!isLoading">
+            <div class="paypal-container" *ngIf="!paidFor">
+                <h1>Rental Application</h1>
+        
+                <hr>
+        
+                <div class="details-container">
+                    <h2>Overiew</h2>
+                    <p class="top-paragraph">
+                        The rental application must be paid upfront (before filling out the application) with a $10
+                        <span class="underline">non-refundable</span>
+                        fee. Each individual (18 or older) that is interested in any rental
+                        <span class="italic">MUST</span>
+                        fill out a seperate application.
+                    </p>
+                    <p class="middle-paragraph">
+                        You can pay the application fee through PayPal below. You will be able to sign in to a PayPal account or pay with a credit/debit card. Once the payment is accepted, you will be redirected to the application process.
+                    </p>
+                </div>
+        
+                <div class="paypal-btn-container">
+                    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+                </div>
+            </div>
+        
+            <div class="payment-success-container" *ngIf="paidFor">
+                <h1>Your Payment Has Processed Successfully!</h1>
+                <h3 class="small-header">Please proceed to complete the form below.</h3>
+                <!--This is where the google form will go-->
+                <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSeiRO5xu9QL7gVQcgDTrZf0y__zc8oRFL-RCS7VWDXCf5AULw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
         </div>
-
-        <div class="paypal-btn-container">
-            <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        
+        <div class="loading-container" *ngIf="isLoading">
+            <img src="/assets/img/Spinner-1s-257px.gif" alt="Loading Icon">
         </div>
     </div>
-
-    <div class="payment-success-container" *ngIf="paidFor">
-        <h1>Your Payment Has Processed Successfully!</h1>
-        <h3 class="small-header">Please proceed to complete the form below.</h3>
-        <!--This is where the google form will go-->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeiRO5xu9QL7gVQcgDTrZf0y__zc8oRFL-RCS7VWDXCf5AULw/viewform?embedded=true" width="600" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div *ngIf="!paidFor">
+        <app-footer></app-footer>
     </div>
-</div>
-
-<div class="loading-container" *ngIf="isLoading">
-    <img src="/assets/img/Spinner-1s-257px.gif" alt="Loading Icon">
-</div>
-
-<div *ngIf="!paidFor">
-    <app-footer position="absolute"></app-footer>
 </div>
