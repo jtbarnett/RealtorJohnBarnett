@@ -297,7 +297,6 @@ span {
 .action {
     margin-bottom: 90px;
     width: 100vw;
-    border-radius: 5px;
     height: 400px;
     display: flex;
     flex-direction: column;
