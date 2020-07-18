@@ -131,10 +131,12 @@ hr {
 }
 
 #left {
+    text-overflow: ellipsis;
     margin-right: 4px;
 }
 
 #right {
+    text-overflow: ellipsis;
     margin-left: 4px;
 }
 
@@ -188,6 +190,7 @@ hr {
     display: flex;
     height: fit-content;
     width: 280px;
+    height: 330px;
     padding-bottom: 25px;
     border-radius: 5px;
     background: white;
@@ -506,7 +509,7 @@ span {
     }
 
     .hero-small-container {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     #hero-button {
@@ -608,10 +611,6 @@ span {
         margin-bottom: 40px;
     }
 
-    .middle-content {
-        margin-bottom: 40px;
-    }
-
     h1 {
         font-size: 24px;
     }
@@ -697,10 +696,6 @@ span {
         font-size: 20px;
     }
 
-    .hero-small-container {
-        display: none;
-    }
-
     #hero-button {
         font-size: 14px;
     }
@@ -717,10 +712,6 @@ span {
     .middle-top-container {
         font-size: 18px;
         height: 100px;
-        margin-bottom: 40px;
-    }
-
-    .middle-content {
         margin-bottom: 40px;
     }
 
