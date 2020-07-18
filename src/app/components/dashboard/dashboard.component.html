@@ -9,7 +9,7 @@
         </div>
         <div class="hero-image-content">
             <div id="top-top">
-                <img src="/assets/img/realtorSmallBlack.png"  width="70px" height="60px"  alt="">
+                <img class="logo" src="/assets/img/realtorSmallBlack.png" alt="">
                 <div id="top">
                     John Barnett
                     <hr>
@@ -145,3 +145,9 @@
 </div>
 
 <app-footer></app-footer>
+
+<div class="modal-container" *ngIf="showModal">
+    <div class="modal-text">You are not authorized to view this page.</div>
+    <div class="modal-text-small">Redirected to the home page.</div>
+    <div id="hero-button" (click)="closeModal()">Close</div>
+</div>

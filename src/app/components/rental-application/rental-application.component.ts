@@ -1,5 +1,8 @@
-import { Component, OnInit, forwardRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { PaymentModalService } from 'src/app/services/payment-modal.service';
 
 @Component({
   selector: 'app-rental-application',
@@ -9,22 +12,19 @@ import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 export class RentalApplicationComponent implements OnInit {
 
   public payPalConfig ? : IPayPalConfig;
-  segmentArray: string[];
-  paymentView = false;
   isLoading = false;
-  paidFor = false;
-  showSuccess = false;
 
-  constructor() { }
+  constructor(private route:Router, private auth: AuthService, private paymentModalService: PaymentModalService) { }
 
   ngOnInit() {
-    this.paidFor = false;
+    this.isLoading = false;
     this.initConfig();
   }
-
   private initConfig(): void {
     this.payPalConfig = {
     currency: 'USD',
+    // Test: AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc
+    // Live: AWKlkk89fyGgqBewwac87de0EtdqH6rGrtCHWBfLyC0w0tF8YTh6sXXxh9VrLdQOrXkdkAlKwRD5WQer
     clientId: 'AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc',
     createOrderOnClient: (data) => <ICreateOrderRequest>{
       intent: 'CAPTURE',
@@ -42,7 +42,7 @@ export class RentalApplicationComponent implements OnInit {
           },
           items: [
             {
-              name: 'Enterprise Subscription',
+              name: 'Rental Application',
               quantity: '1',
               category: 'DIGITAL_GOODS',
               unit_amount: {
@@ -70,7 +70,13 @@ export class RentalApplicationComponent implements OnInit {
     },
     onClientAuthorization: (data) => {
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-      this.showSuccess = true;
+      this.isLoading = true;
+      this.auth.setAuthentication();
+      this.paymentModalService.setModal(true);
+      setTimeout(() => {
+        this.isLoading = false;
+        this.route.navigate(['/rental-application-form']);
+      }, 3000);
     },
     onCancel: (data, actions) => {
       console.log('OnCancel', data, actions);

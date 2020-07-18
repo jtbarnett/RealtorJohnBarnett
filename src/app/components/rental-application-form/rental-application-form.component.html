@@ -1,0 +1,10 @@
+
+<div class="main-container">
+    <iframe class="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSeiRO5xu9QL7gVQcgDTrZf0y__zc8oRFL-RCS7VWDXCf5AULw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="">Loading…</iframe>
+</div>
+
+<div class="modal-container" *ngIf="showModal">
+    <div class="modal-text">Your Payment Has Processed Successfully!</div>
+    <div class="modal-text-small">Please proceed to complete the form.</div>
+    <div id="hero-button" (click)="closeModal()">Close</div>
+</div>

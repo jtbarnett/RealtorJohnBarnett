@@ -11,6 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RentalApplicationComponent } from './components/rental-application/rental-application.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { RentalApplicationFormComponent } from './components/rental-application-form/rental-application-form.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+import { CookieModule } from 'ngx-cookie';
+import { CookieService } from 'ngx-cookie-service';
+import { CookieGeneratorService } from './services/cookie-generator.service';
+import { ModalService } from './services/modal.service';
+import { PaymentModalService } from './services/payment-modal.service';
 
 @NgModule({
   declarations: [
@@ -20,16 +28,25 @@ import { NgxPayPalModule } from 'ngx-paypal';
     FooterComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    RentalApplicationComponent
+    RentalApplicationComponent,
+    RentalApplicationFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+    CookieModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    AuthService,
+    CookieService,
+    CookieGeneratorService,
+    ModalService,
+    PaymentModalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
