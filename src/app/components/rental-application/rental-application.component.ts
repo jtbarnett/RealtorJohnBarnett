@@ -11,10 +11,10 @@ import { PaymentModalService } from 'src/app/services/payment-modal.service';
 })
 export class RentalApplicationComponent implements OnInit {
 
-  public payPalConfig ? : IPayPalConfig;
+  public payPalConfig?: IPayPalConfig;
   isLoading = false;
 
-  constructor(private route:Router, private auth: AuthService, private paymentModalService: PaymentModalService) { }
+  constructor(private route: Router, private auth: AuthService, private paymentModalService: PaymentModalService) { }
 
   ngOnInit() {
     this.isLoading = false;
@@ -25,7 +25,7 @@ export class RentalApplicationComponent implements OnInit {
     currency: 'USD',
     // Test: AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc
     // Live: AWKlkk89fyGgqBewwac87de0EtdqH6rGrtCHWBfLyC0w0tF8YTh6sXXxh9VrLdQOrXkdkAlKwRD5WQer
-    clientId: 'AQlJ-KfCd_4xjrPuSEsf08238ZOk3Z9arIfa2OrHM2kcfLrsWzqBF1vnhtwRxRUcsq7UyoyiXOpSp0vc',
+    clientId: 'AWKlkk89fyGgqBewwac87de0EtdqH6rGrtCHWBfLyC0w0tF8YTh6sXXxh9VrLdQOrXkdkAlKwRD5WQer',
     createOrderOnClient: (data) => <ICreateOrderRequest>{
       intent: 'CAPTURE',
       purchase_units: [
@@ -70,9 +70,9 @@ export class RentalApplicationComponent implements OnInit {
     },
     onClientAuthorization: (data) => {
       console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-      this.isLoading = true;
       this.auth.setAuthentication();
       this.paymentModalService.setModal(true);
+      this.isLoading = true;
       setTimeout(() => {
         this.isLoading = false;
         this.route.navigate(['/rental-application-form']);

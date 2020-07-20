@@ -544,7 +544,7 @@ span {
     }
 
     span {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .call-body {
@@ -617,18 +617,6 @@ span {
 
     h2 {
         font-size: 20px;
-    }
-
-    span {
-        font-size: 16px;
-    }
-
-    .call-body {
-        font-size: 16px;
-    }
-
-    .call-second-text {
-        font-size: 16px;
     }
 
     #top-top {
@@ -725,14 +713,6 @@ span {
 
     span {
         font-size: 14px;
-    }
-
-    .call-body {
-        font-size: 16px;
-    }
-
-    .call-second-text {
-        font-size: 16px;
     }
 
     #top-top {

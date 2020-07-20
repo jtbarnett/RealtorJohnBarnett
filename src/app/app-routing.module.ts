@@ -8,11 +8,11 @@ import { RentalApplicationFormComponent } from './components/rental-application-
 import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'contact-page', component: ContactPageComponent },
-  { path: 'rental-application', component: RentalApplicationComponent },
-  { path: 'rental-application-form', component: RentalApplicationFormComponent, canActivate: [AuthGuardService] },
-  { path: 'page-not-found', component: PageNotFoundComponent },
+  { path: '', component: DashboardComponent, data: {title: 'Realtor John Barnett'} },
+  { path: 'contact-page', component: ContactPageComponent, data: {title: 'Contact - Realtor John Barnett'} },
+  { path: 'rental-application', component: RentalApplicationComponent, data: {title: 'Rental Application - Realtor John Barnett'} },
+  { path: 'rental-application-form', component: RentalApplicationFormComponent, canActivate: [AuthGuardService], data: {title: 'Application Form - Realtor John Barnett'} },
+  { path: 'page-not-found', component: PageNotFoundComponent, data: {title: 'Page Not Found'} },
   { path: '**', redirectTo: '/page-not-found' }
 ];
 

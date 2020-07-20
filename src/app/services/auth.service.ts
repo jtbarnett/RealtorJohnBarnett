@@ -13,11 +13,10 @@ export class AuthService {
 
   setAuthentication() {
     this.generatedCookie = this.cookieGenerator.generateCookie();
-    this.cookieService.set('authToken', this.generatedCookie, 0.05);
+    this.cookieService.set('authToken', this.generatedCookie);
   }
 
   isAuthenticated(): boolean {
-    console.log(this.cookieService.get('authToken'));
     if (this.cookieService.get('authToken')) {
       return true;
     }

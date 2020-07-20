@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,7 +45,7 @@ import { PaymentModalService } from './services/payment-modal.service';
     CookieService,
     CookieGeneratorService,
     ModalService,
-    PaymentModalService
+    PaymentModalService, Title
   ],
   bootstrap: [AppComponent]
 })
