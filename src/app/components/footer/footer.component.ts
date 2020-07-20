@@ -11,7 +11,7 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let element = document.getElementById('footer');
+    const element = document.getElementById('footer');
     element.style.position = this.position;
   }
 

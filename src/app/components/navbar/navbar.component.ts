@@ -11,18 +11,18 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
+    window.onclick = (event) => {
       if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        let i;
         for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
+          const openDropdown = dropdowns[i];
           if (openDropdown.classList.contains('show')) {
             openDropdown.classList.remove('show');
           }
         }
       }
-    }
+    };
   }
 
   navProperties() {
@@ -32,6 +32,6 @@ export class NavbarComponent implements OnInit {
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
   myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById('myDropdown').classList.toggle('show');
   }
 }

@@ -15,7 +15,7 @@ export class AuthGuardService implements CanActivate {
       return true;
     }
     this.modalService.setModal(true);
-    this.route.navigate([''])
+    this.route.navigate(['']);
     return false;
   }
 }

@@ -45,7 +45,8 @@ import { PaymentModalService } from './services/payment-modal.service';
     CookieService,
     CookieGeneratorService,
     ModalService,
-    PaymentModalService, Title
+    PaymentModalService,
+    Title
   ],
   bootstrap: [AppComponent]
 })

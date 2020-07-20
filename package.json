@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~10.0.4",
     "@angular/router": "~10.0.4",
     "@nguniversal/express-engine": "^10.0.1",
+    "lodash": "^4.17.19",
     "ngx-cookie": "^4.1.2",
     "ngx-cookie-service": "^3.0.4",
     "ngx-paypal": "^6.1.0",

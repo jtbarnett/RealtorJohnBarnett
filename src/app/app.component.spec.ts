@@ -23,13 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'realtor-website'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('realtor-website');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('realtor-website app is running!');
+    expect(app.title).toEqual(undefined);
   });
 });
