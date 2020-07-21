@@ -10,9 +10,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 12px rgb(33, 33, 33, .5);
+    -webkit-box-shadow: 0 0 10px rgba(33, 33, 33, .6);
+    -moz-box-shadow: 0 0 10px rgba(33, 33, 33, .6);
+    box-shadow: 0 0 10px rgba(33, 33, 33, .6);
     opacity: .98;
-    /*border: 1px solid #f1f1f1;*/
 }
 
 .nav-logo {
@@ -53,6 +54,8 @@
     height: 100%;
     padding: 0px 15px;
     border-radius: 0px;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
     transition: .2s ease;
 }
 
@@ -122,6 +125,8 @@
     background-color: #E8E8E8;
     font-weight: bold;
     font-size: 12px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
