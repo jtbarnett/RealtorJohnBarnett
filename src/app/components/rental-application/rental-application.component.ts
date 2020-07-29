@@ -20,7 +20,7 @@ export class RentalApplicationComponent implements OnInit {
     this.isLoading = false;
     this.initConfig();
   }
-  
+
   private initConfig(): void {
     this.payPalConfig = {
     currency: 'USD',
